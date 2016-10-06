@@ -26,4 +26,12 @@ public class ArrayIterator<E> implements Iterator<E>
 		list.remove(cursor);
 		cursor--;
 	}
+	
+	public boolean hasTwoMore() {
+		if(list.size() < 2)
+			return false;
+		if(!((list.size() - cursor) > 2))
+			return false;
+		return true;
+	}
 }

@@ -34,4 +34,14 @@ public class RefIterator<E> implements Iterator<E>
 		cursor = cursor.prev;
 		list.size--;
 	}
+	
+	public boolean hasTwoMore() {
+		if(list.size() < 2) {
+			return false;
+		}
+		if(cursor.next != list.tail.prev && cursor.next != list.tail) {
+			return true;
+		}
+		return false;
+	}
 }
