@@ -68,6 +68,16 @@ public class ArrayList<E> implements List<E>{
 		}
 		return null;
 	}
+
+//	private int indexOf(Object obj, int start) {
+//		if(start >= values.length) return -1;
+//		if(values[start].equals(obj)) return start;
+//		return indexOf(obj, start + 1);
+//	}
+//	
+//	public int indexOf(Object obj) {
+//		return indexOf(obj, 0);
+//	}
 	
 	public int indexOf(Object obj){
 		for(int i = 0; i < size; i++){
