@@ -32,4 +32,8 @@ public class ArrayQueue<E> implements QueueADT<E> {
 	public E peek() {
 		return values.get(front);
 	}
+	
+	public int size() {
+		return values.size();
+	}
 }

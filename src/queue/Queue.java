@@ -21,4 +21,8 @@ public class Queue<E> implements QueueADT<E> {
 			return null; //Return null if empty
 		return values.get(0); //Return first object if not.
 	}
+	
+	public int size() {
+		return values.size();
+	}
 }

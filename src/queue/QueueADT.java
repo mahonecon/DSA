@@ -13,5 +13,8 @@ public interface QueueADT<E> {
 	
 	/** @return the value at the front of the queue,
 	 *  or null if the queue is empty */
-	E peek();	
+	E peek();
+	
+	/** @return the size of the QueueADT as an int. */
+	int size();
 }
