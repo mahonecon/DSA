@@ -10,6 +10,17 @@ public class ArrayList<E> implements List<E>{
 		values=(E[]) new Object [cap];
 	}
 	
+	public ArrayList(List<E> list) {
+		this(list.size());
+		E e;
+		for(int i = 0; i < list.size(); i++) {
+			e = list.get(i);
+			if(e != null) {
+				add(e);
+			}
+		}
+	}
+	
 	public ArrayList(){
 		this(10);
 	}
@@ -68,16 +79,6 @@ public class ArrayList<E> implements List<E>{
 		}
 		return null;
 	}
-
-//	private int indexOf(Object obj, int start) {
-//		if(start >= values.length) return -1;
-//		if(values[start].equals(obj)) return start;
-//		return indexOf(obj, start + 1);
-//	}
-//	
-//	public int indexOf(Object obj) {
-//		return indexOf(obj, 0);
-//	}
 	
 	public int indexOf(Object obj){
 		for(int i = 0; i < size; i++){
