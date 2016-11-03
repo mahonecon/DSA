@@ -42,67 +42,67 @@ public class ExprDriver
       System.out.println (e2 + " simplifies to " + e2.simplify());
       System.out.println (e2 + " = " + e2.eval());
       
-      //////////  Uncomment the following when ready for part b
-//       System.out.println ("\nTesting problem 2(b)");
-//         e1 = new Sum (new Variable('x'), new Variable('y'));            //  x + y
-//         try { e1.eval(); }
-//         catch (IllegalArgumentException iae)
-//             {   System.out.println ("Exception thrown: ok"); }
-//             
-//         e2 = new Sum (new Variable('y'), new Variable('x'));            //  y+x
-//         Expr e3 = new Difference (e1, e2);                                   // (x+y) - (y+x)
-//         System.out.println (e3 + "Simplifies to " + e3.simplify());          // 0
-//         System.out.println();
-//         
-//         e3 = new Mod (e1, e2);                                          // (x+y) % (y+x)
-//         System.out.println (e3 + "Simplifies to " + e3.simplify());          // 0
-//         System.out.println();
-//         
-//         Expr e = new Quotient (new Variable('x'), new Variable('x'));       // x / x
-//         e = new Product ( new Variable('y'), e);                    //   y * (x/x)
-//         e = new Difference (e, new Variable('y'));                   //   y * (x/x) - y
-//         e = new Sum (e, new Constant(1));                             //   (y * (x/x) - y) + 1
-// 
-//         System.out.println (e + "Simplifies to " + e.simplify());        //   1
-//             e1 = new Difference (new Variable ('a'), new Variable ('b'));
-//             e2 = new Difference (new Variable ('b'), new Variable ('a'));
-//             if (e1.equals (e2))
-//                 System.out.println ("Not correct");
-//             e1 = new Quotient (new Variable ('a'), new Variable ('b'));
-//             e2 = new Quotient (new Variable ('b'), new Variable ('a'));
-//             if (e1.equals (e2))
-//                 System.out.println ("Not correct");
+      //////////  Uncomment the following when ready for part 2(b)
+       System.out.println ("\nTesting problem 2(b)");
+         e1 = new Sum (new Variable('x'), new Variable('y'));            //  x + y
+         try { e1.eval(); }
+         catch (IllegalArgumentException iae)
+             {   System.out.println ("Exception thrown: ok"); }
+             
+         e2 = new Sum (new Variable('y'), new Variable('x'));            //  y+x
+         Expr e3 = new Difference (e1, e2);                                   // (x+y) - (y+x)
+         System.out.println (e3 + "Simplifies to " + e3.simplify());          // 0
+         System.out.println();
+         
+         e3 = new Mod (e1, e2);                                          // (x+y) % (y+x)
+         System.out.println (e3 + "Simplifies to " + e3.simplify());          // 0
+         System.out.println();
+         
+         Expr e = new Quotient (new Variable('x'), new Variable('x'));       // x / x
+         e = new Product ( new Variable('y'), e);                    //   y * (x/x)
+         e = new Difference (e, new Variable('y'));                   //   y * (x/x) - y
+         e = new Sum (e, new Constant(1));                             //   (y * (x/x) - y) + 1
+ 
+         System.out.println (e + "Simplifies to " + e.simplify());        //   1
+             e1 = new Difference (new Variable ('a'), new Variable ('b'));
+             e2 = new Difference (new Variable ('b'), new Variable ('a'));
+             if (e1.equals (e2))
+                 System.out.println ("Not correct");
+             e1 = new Quotient (new Variable ('a'), new Variable ('b'));
+             e2 = new Quotient (new Variable ('b'), new Variable ('a'));
+             if (e1.equals (e2))
+                 System.out.println ("Not correct");
        
 
-                //////////  Uncomment the following when ready for part 3 (b)
-//       System.out.println ("\nTesting problem 2(c)");
-//               
-//           Expr a = new Variable ('a');
-//           Expr b = new Variable ('b');
-// 
-// try {     System.out.println (new Sum(a,b).eval()); }
-// catch (IllegalArgumentException iae)
-//     {     System.out.println ("Exception thrown: ok"); }
-//      
-//          e1 = new Sum (new Assign(a, new Constant(5)),
-//                             new Assign (b, new Constant (7)));          // e1 = (a=5) + (b=7)                            
-// try {     System.out.println (new Sum(a,b).eval()); }
-// catch (IllegalArgumentException iae)
-//     {     System.out.println ("Exception thrown: ok"); }
-//     
-//           System.out.println ("The value of " + e1 + " is " + e1.eval());
-//           
-//           System.out.println (a + " is " + a.eval());
-//           System.out.println (b + " is " + b.eval());
-//           
-//           (new Assign (b, new Constant(5))).eval();                              // b = 5, discard the result
-//           if (b.equals(a))
-//             System.err.println ("Incorrect: a and b are different expressions");
-//             
-//           (new Assign (b, a)).eval();                                           // b = a;
-//           (new Assign (a, new Constant (0))).eval();                            // a = 0;
-//           if (b.eval() != 5)
-//             System.err.println ("Incorrect: Variables should store values, not expressions");
+                //////////  Uncomment the following when ready for part 2(c)
+       System.out.println ("\nTesting problem 2(c)");
+               
+           Expr a = new Variable ('a');
+           Expr b = new Variable ('b');
+ 
+ try {     System.out.println (new Sum(a,b).eval()); }
+ catch (IllegalArgumentException iae)
+     {     System.out.println ("Exception thrown: ok"); }
+      
+          e1 = new Sum (new Assign(a, new Constant(5)),
+                             new Assign (b, new Constant (7)));          // e1 = (a=5) + (b=7)                            
+ try {     System.out.println (new Sum(a,b).eval()); }
+ catch (IllegalArgumentException iae)
+     {     System.out.println ("Exception thrown: ok"); }
+     
+           System.out.println ("The value of " + e1 + " is " + e1.eval());
+           
+           System.out.println (a + " is " + a.eval());
+           System.out.println (b + " is " + b.eval());
+           
+           (new Assign (b, new Constant(5))).eval();                              // b = 5, discard the result
+           if (b.equals(a))
+             System.err.println ("Incorrect: a and b are different expressions");
+             
+           (new Assign (b, a)).eval();                                           // b = a;
+           (new Assign (a, new Constant (0))).eval();                            // a = 0;
+           if (b.eval() != 5)
+             System.err.println ("Incorrect: Variables should store values, not expressions");
             
          
   

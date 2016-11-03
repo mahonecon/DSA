@@ -9,6 +9,8 @@ public class Sum extends Expr {
 	public Expr simplify(){
 		left=left.simplify();
 		right=right.simplify();
+		if(left instanceof Variable && right instanceof Variable)
+			return this;
 		if(right instanceof Constant&&right.eval()==0)
 			return left;
 		if(left instanceof Constant&&left.eval()==0)
@@ -27,7 +29,11 @@ public class Sum extends Expr {
 	}
 	
 	public String toString() {
-		return String.valueOf("(" + left + "+" + right + ")");
+		String s = "(";
+		s += String.valueOf(left) + "+";
+		s += String.valueOf(right);
+		s += ")";
+		return s;
 	}
 
 }

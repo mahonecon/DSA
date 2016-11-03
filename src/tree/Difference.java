@@ -9,6 +9,9 @@ public class Difference extends Expr{
 	public Expr simplify() {
 		left = left.simplify();
 		right = right.simplify();
+		if(left.equals(right)) {
+			return new Constant(0);
+		}
 		if(right instanceof Constant&&right.eval()==0)
 			return left;
 		return new Constant(eval());
@@ -25,7 +28,11 @@ public class Difference extends Expr{
 	}
 	
 	public String toString() {
-		return String.valueOf("(" + left + "-" + right + ")");
+		String s = "(";
+		s += String.valueOf(left) + "-";
+		s += String.valueOf(right);
+		s += ")";
+		return s;
 	}
 
 }

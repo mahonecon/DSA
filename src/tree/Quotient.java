@@ -9,6 +9,10 @@ public class Quotient extends Expr{
 	public Expr simplify() {
 		left = left.simplify();
 		right = right.simplify();
+		if(left.equals(right))
+			return new Constant(1);
+		if(left instanceof Variable && right instanceof Variable)
+			return this;
 		if(right instanceof Constant&&right.eval()==1)
 			return left;
 		if(right instanceof Constant&&right.eval()==0)

@@ -10,6 +10,8 @@ public class Product extends Expr{
 	public Expr simplify() {
 		left=left.simplify();
 		right=right.simplify();
+		if(left instanceof Variable && right instanceof Variable)
+			return this;
 		if(right instanceof Constant&&right.eval()==1)
 			return left;
 		if(left instanceof Constant&&left.eval()==1)

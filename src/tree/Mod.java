@@ -9,18 +9,19 @@ public class Mod extends Expr{
 	public Expr simplify() {
 		left = left.simplify();
 		right = right.simplify();
-		if(left instanceof Constant && left.eval() == 1) {
+		if(left.equals(right)) {
+			return new Constant(0);
+		}
+		if(left instanceof Variable && right instanceof Variable)
+			return this;
+		if(left instanceof Constant && left.eval() == 1)
 			return new Constant(1);
-		}
-		if(right instanceof Constant && right.eval() == 1) {
+		if(right instanceof Constant && right.eval() == 1)
 			return new Constant(0);
-		}
-		if(left instanceof Constant && left.eval() == 0) {
+		if(left instanceof Constant && left.eval() == 0)
 			return new Constant(0);
-		}
-		if(right instanceof Constant && right.eval() == 0) {
+		if(right instanceof Constant && right.eval() == 0)
 			return null;
-		}
 		return new Constant(eval());
 	}
 	
