@@ -1,4 +1,5 @@
 package tree;
+import list.Iterator;
 
 public interface BinaryTree<E> {
 
@@ -37,4 +38,8 @@ public interface BinaryTree<E> {
 	
 	/** @return the number of BinarySearchTrees in the family of this BinaryTree */
 	int size();
+	
+	Iterator<E> iterator();
+	
+	String toString();
 }

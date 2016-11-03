@@ -2,6 +2,8 @@ package tree;
 
 import java.util.*;
 
+import list.Iterator;
+
 public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
 
 	E value;
@@ -150,7 +152,23 @@ public class BinarySearchTree<E extends Comparable> implements BinaryTree<E> {
 	}
 
 	public int size() {
-		return 1 + left.size() + right.size();
+		return left.size()+right.size()+1;
+	}
+	
+	public Iterator<E> iterator() {
+		return new TreeIterator<E>(this);
+	}
+	
+	public String toString() {
+		Iterator it = iterator();
+		String s = "[";
+		while(it.hasNext()) {
+			s += it.next();
+			if(it.hasNext()) {
+				s += ", ";
+			}
+		}
+		return s += "]";
 	}
 
 }

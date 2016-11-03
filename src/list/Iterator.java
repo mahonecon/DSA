@@ -10,7 +10,4 @@ public interface Iterator<E>
 	
 	/** remove last item returned by a call to next() */
 	void remove();
-	
-	/** @return true if there are two more values in the List<E> that is being iterated.*/
-	boolean hasTwoMore();
 }

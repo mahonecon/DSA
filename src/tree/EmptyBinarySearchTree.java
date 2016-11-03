@@ -1,5 +1,7 @@
 package tree;
 
+import list.Iterator;
+
 public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E> {
 
 	public E getValue() {
@@ -57,5 +59,12 @@ public class EmptyBinarySearchTree<E extends Comparable> implements BinaryTree<E
 		return 0;
 	}
 
+	public Iterator<E> iterator() {
+		return new EmptyIterator<E>();
+	}
+	
+	public String toString() {
+		return "[]";
+	}
 	
 }
