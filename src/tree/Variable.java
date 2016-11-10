@@ -2,14 +2,9 @@ package tree;
 
 public class Variable extends Expr{
 	
-	Constant right = null;
+	int value;
 	char name;
 	 
-	public Variable(Expr left, Expr right) {
-		this.left = left;
-		this.right = (Constant)right;
-	}
-	
 	public Variable(char name) {
 		this.name = name;
 	}
@@ -19,9 +14,9 @@ public class Variable extends Expr{
 	}
 	
 	public int eval() {
-		if(right != null)
-			return right.eval();
-		throw new IllegalArgumentException();
+		if(right == null)
+			throw new IllegalArgumentException();
+		return right.eval();
 	}
 	
 	public boolean equals(Object obj) {

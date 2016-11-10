@@ -18,6 +18,12 @@ public class Assign extends Expr{
 	}
 
 	public boolean equals(Object obj) {
+		if(obj instanceof Assign) {
+			Assign a = (Assign) obj;
+			if(a.left.equals(left)) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
