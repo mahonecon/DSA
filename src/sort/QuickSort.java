@@ -40,4 +40,10 @@ public class QuickSort<E extends Comparable> implements Sorter<E> {
 				list.set(i, list.get(p));}}
 			list.set(p, pivotValue);
 			return p;}
+
+	@Override
+	public void sortDescending(List<E> list) {
+		// TODO Auto-generated method stub
+		
+	}
 }
