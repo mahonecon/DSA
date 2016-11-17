@@ -76,7 +76,7 @@ public class LinkedList<E> implements List<E>{
 	public int indexOf(Object obj){
 		Node<E> ref = head.next;
 		for(int i = 0;i < size;i++){
-			if(ref.equals(obj)){
+			if(ref.value.equals(obj)){
 				return i;
 			}
 			ref = ref.next;		

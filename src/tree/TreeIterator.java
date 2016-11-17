@@ -8,7 +8,7 @@ public class TreeIterator<E> implements Iterator<E> {
 	BinaryTree<E> tree;
 	QueueADT<E> queue=new Queue<E>();
 	
-	TreeIterator(BinaryTree<E> tree){
+	public TreeIterator(BinaryTree<E> tree){
 		this.tree=tree;
 		buildQ(tree);
 	}
@@ -25,7 +25,7 @@ public class TreeIterator<E> implements Iterator<E> {
 	}
 
 	public E next() {
-		lastGotten=queue.peek();
+		lastGotten = queue.peek();
 		return queue.remove();
 	}
 
@@ -33,5 +33,8 @@ public class TreeIterator<E> implements Iterator<E> {
 		tree=tree.remove(lastGotten);
 	}
 	
+	public E getLastGotten() {
+		return lastGotten;
+	}
 	
 }
