@@ -6,7 +6,7 @@ package queueDriver;
  * @author (sdb) 
  * @version (Feb 2012)
  */
-public class Doc
+public class Doc implements Comparable<Doc>
 {
     private int size;      // size of this Doc, in blocks
 
@@ -23,4 +23,8 @@ public class Doc
     public String toString() {
     	return ("Doc of size " + size() + " ");
     }
+
+	public int compareTo(Doc d) {
+		return d.size() - size;
+	}
 }

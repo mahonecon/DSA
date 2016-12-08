@@ -10,14 +10,17 @@ public interface Set<E> {
 
 	boolean remove(Object obj);
 	
-	public int size();
+	int size();
 	
 	Iterator<E> iterator();
 	
 	/** @return the elements of this Set as a String */
-	public String toString();
+	String toString();
 	
 	/** @return true if obj is a Set and all the values in this Set are in the other Set, 
     and all the values in the other Set are in this Set */
-	public boolean equals(Object obj);
+	boolean equals(Object obj);
+	
+	/** @return a Set which is an intersection of this Set with other. */
+	Set<E> intersection(Set<E> other);
 }

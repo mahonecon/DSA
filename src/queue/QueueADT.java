@@ -17,4 +17,6 @@ public interface QueueADT<E> {
 	
 	/** @return the size of the QueueADT as an int. */
 	int size();
+	
+	boolean isEmpty();
 }

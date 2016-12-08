@@ -68,6 +68,18 @@ public class HashTable<E> {
 		return keyCount;
 	}
 	
+	public boolean isEmpty() {
+		if(keyCount != 0) {
+			return false;
+		}
+		return true;
+	}
+	
+	public void clear() {
+		lists.clear();
+		keyCount = 0;
+	}
+	
 	public Iterator<E> iterator() {
 		return new TableIterator<E>(this);
 	}

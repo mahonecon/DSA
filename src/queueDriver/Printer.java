@@ -19,7 +19,7 @@ public class Printer
      */
     public Printer(int speed, String id) {
         this.speed = speed;
-        docs = new Queue <Doc> ();            
+        docs = new PriorityQueue<Doc> ();            
         this.id = id;
     }
     /** Add a document to this printer's queue 
@@ -39,7 +39,7 @@ public class Printer
         	Doc temp = docs.peek();
     		counter = counter + speed;
         	if(counter >= temp.size()) {
-        		System.out.println("Print task completed on " + id + " for: " + temp);
+        		System.out.println("	Print task completed on " + id + " for: " + temp);
         		docs.remove();
         		counter = 0;
         	}

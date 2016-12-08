@@ -19,6 +19,13 @@ public class Quotient extends Expr{
 			return null;
 		if(left instanceof Constant&&left.eval()==0)
 			return new Constant(0);
+		if(left instanceof Product) {
+			Expr x = left.left;
+			Expr y = left.right;
+			if(right.equals(y)) {
+				return x;
+			}
+		}
 		return new Constant(eval());
 	}
 	

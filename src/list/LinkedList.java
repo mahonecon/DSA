@@ -94,7 +94,7 @@ public class LinkedList<E> implements List<E>{
 	}
 	
 	public boolean contains(Object obj) {
-		return true;
+		return indexOf(obj) > -1;
 	}
 	
 	public String toString() {
