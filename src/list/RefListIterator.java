@@ -2,7 +2,7 @@ package list;
 
 /** A class that implements ListIterators for LinkedLists */
 public class RefListIterator<E> extends RefIterator<E> implements ListIterator<E> {
-	//cursor refers...
+
 	private boolean forward = true;
 	
 	public RefListIterator(LinkedList<E> linkedList){

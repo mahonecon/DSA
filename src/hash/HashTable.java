@@ -4,7 +4,7 @@ import list.*;
 /**
  * A table which allows for quick access to data. Duplicates are permitted.
  * E should define equals(Object) and hashCode()
- * @author
+ * @author CJ Mahoney
  *
  */
 public class HashTable<E> {

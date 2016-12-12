@@ -2,7 +2,7 @@ package hash;
 import list.Iterator;
 /**
  * An iterator to sort a HashTable
- * @author
+ * @author CJ Mahoney
  *
  */
 
