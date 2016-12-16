@@ -32,6 +32,7 @@ public class HwHashMapDriver
         assert names.size() == 5 : "Size is incorrect" ;
         assert names.get ("sue") == null : "Incorrect value for sue" ;
         
+        System.out.println(names.size());
         System.out.println (names);     // Hint: Entry needs a toString() method
 }
   

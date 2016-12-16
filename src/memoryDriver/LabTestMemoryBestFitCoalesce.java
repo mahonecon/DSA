@@ -18,18 +18,18 @@ public class LabTestMemoryBestFitCoalesce
 	   init();
        
        // Testing part (a),  Best Fit Algorithm
-//      System.out.println ("Testing part (a)");
-//      System.out.println(mem);
-//       mem.free(v2);
-//       mem.free(v4);
-//       mem.free(v6);
-//       System.out.println(mem);
-//       
-//       mem.allocate(150);
-//       System.out.println(mem);
-//       if(mem.allocate(4000) >= 0)
-//            System.err.println ("Error in allocate");
-//       System.out.println();
+      System.out.println ("Testing part (a)");
+      System.out.println(mem);
+       mem.free(v2);
+       mem.free(v4);
+       mem.free(v6);
+       System.out.println(mem);
+       
+       mem.allocate(150);
+       System.out.println(mem);
+       if(mem.allocate(4000) >= 0)
+            System.err.println ("Error in allocate");
+       System.out.println();
        
        // Testing part (b), Coalesce free blocks
        /////// Uncomment the following when ready for part (b)

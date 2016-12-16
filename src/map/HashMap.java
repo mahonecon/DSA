@@ -1,6 +1,7 @@
 package map;
 
 import hash.*;
+import set.*;
 import list.Iterator;
 
 /** An implementation of Map, using a HashTable */
@@ -64,9 +65,9 @@ public class HashMap<K, V> implements Map<K,V> {
 			Entry e = (Entry)itty.next();
 			str += e.toString();
 			if(itty.hasNext()) {
-				str += ",";
-				}
+				str += ", ";
 			}
+		}
 		str += "]";
 		return str;
 	}
