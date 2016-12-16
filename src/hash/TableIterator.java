@@ -19,11 +19,13 @@ public class TableIterator<E> implements Iterator<E> {
 	public boolean hasNext() {
 		if (itty.hasNext())
 			return true;
-		for(ndx++; ndx < table.lists.size(); ndx++) {
-			if(table.lists.get(ndx).isEmpty()) 
+		for(ndx++; ndx < table.lists.size();) {
+			if(table.lists.get(ndx).isEmpty()) {
 				setItty(ndx);
 				return true;
-		} return false;		
+			}
+		} 
+		return false;		
 	}
 	
 	public E next() {
@@ -41,6 +43,12 @@ public class TableIterator<E> implements Iterator<E> {
 	}
 
 	public boolean hasTwoMore() {
-		return false;
+		if(table.lists.size() < 2) {
+			return false;
+		}
+		if(!((table.lists.size() - ndx) > 2)) {
+			return false;
+		}
+		return true;
 	}
 }

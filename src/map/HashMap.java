@@ -1,6 +1,7 @@
 package map;
 
 import hash.*;
+import list.Iterator;
 
 /** An implementation of Map, using a HashTable */
 public class HashMap<K, V> implements Map<K,V> {
@@ -46,5 +47,31 @@ public class HashMap<K, V> implements Map<K,V> {
 		if(entry == null) return null;
 		table.remove(entry);
 		return entry.value;
+	}
+	
+	public boolean isEmpty() {
+		return table.isEmpty();
+	}
+	
+	public int size() {
+		return table.size();
+	}
+	
+	public String toString() {
+		String str = "[";
+		Iterator<Entry<K,V>> itty = table.iterator();
+		while(itty.hasNext()) {
+			Entry e = (Entry)itty.next();
+			str += e.toString();
+			if(itty.hasNext()) {
+				str += ",";
+				}
+			}
+		str += "]";
+		return str;
+	}
+	
+	public void clear() {
+		table = new HashTable<Entry<K,V>>(10);
 	}
 }

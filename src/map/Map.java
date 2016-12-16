@@ -16,4 +16,9 @@ public interface Map<K, V> {
 	 * @return the value of that entry or null if not in the Map. */
 	V remove(K key);
 
+	boolean isEmpty();
+	
+	int size();
+	
+	void clear();
 }
