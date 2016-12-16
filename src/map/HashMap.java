@@ -1,7 +1,7 @@
 package map;
 
 import hash.*;
-import set.*;
+import list.*;
 import list.Iterator;
 
 /** An implementation of Map, using a HashTable */
@@ -74,5 +74,19 @@ public class HashMap<K, V> implements Map<K,V> {
 	
 	public void clear() {
 		table = new HashTable<Entry<K,V>>(10);
+	}
+	
+	public boolean hasDuplicateValues() {
+		Iterator<Entry<K,V>> itty = table.iterator();
+		ArrayList<V> values = new ArrayList<V>();
+		Entry<K,V> e;
+		while(itty.hasNext()) {
+			e = itty.next();
+			if(values.contains(e.value)) {
+				return true;
+			}
+			values.add(e.value);
+		}
+		return false;
 	}
 }

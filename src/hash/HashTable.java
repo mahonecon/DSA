@@ -25,7 +25,7 @@ public class HashTable<E> {
 	/** @param capacity is size of ArrayList*/
 	public HashTable(int capacity) {
 		for(int i = 0; i < capacity; i++)
-			lists.add(new LinkedList<E>()); //Creates capacity worth of empty Linked Lists.
+			lists.add(new LinkedList<E>()); //Adds capacity worth of LinkedLists to ArrayList.
 	}
 	
 	/**return a valid index to lists */

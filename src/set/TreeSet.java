@@ -90,4 +90,10 @@ public class TreeSet<E extends Comparable> implements Set<E> {
 		return intersect;
 	}
 
+	@Override
+	public Set<E> difference(Set<E> other) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

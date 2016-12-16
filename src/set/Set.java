@@ -23,4 +23,7 @@ public interface Set<E> {
 	
 	/** @return a Set which is an intersection of this Set with other. */
 	Set<E> intersection(Set<E> other);
+	
+	/** @return the set of all elements which are in this Set, but not also in the other Set */
+	Set <E> difference (Set <E> other);
 }

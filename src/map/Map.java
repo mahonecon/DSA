@@ -16,9 +16,15 @@ public interface Map<K, V> {
 	 * @return the value of that entry or null if not in the Map. */
 	V remove(K key);
 
+	/** @return true if size() == 0 */
 	boolean isEmpty();
 	
+	/** @return the size of the map */
 	int size();
 	
+	/** remove all values and keys from the Map */
 	void clear();
+	
+	/** @return true only if there are at least two entries in this map with the same value */
+	boolean hasDuplicateValues();
 }

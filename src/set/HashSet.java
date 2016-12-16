@@ -62,20 +62,38 @@ public class HashSet<E> implements Set<E> {
 		return false;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Set<E> intersection(Set<E> other) {
 		Set<E> intersect = new HashSet<E>();
 		if(other instanceof HashSet<?>) {
-			Iterator itt = other.iterator();
+			Iterator<E> itt = other.iterator();
 			while(itt.hasNext()) {
-				if(itt != null) {
-					Object obj = itt;
+				E temp = itt.next();
+				if(temp != null) {
+					Object obj = temp;
 					if(obj != null && this.contains(obj)) {
 						intersect.add((E)obj);
 					}
 				}
-				itt.next();
 			}
 		}
 		return intersect;
+	}
+	
+	public Set<E> difference(Set<E> other) {
+		Set<E> difference = new HashSet<E>();
+		if(other instanceof HashSet<?>) {
+			Iterator<E> itt = iterator();
+			while(itt.hasNext()) {
+				E temp = itt.next();
+				if(temp != null) {
+					Object obj = temp;
+					if(obj != null && !other.contains(obj)) {
+						difference.add((E) obj);
+					}
+				}
+			}
+		}
+		return difference;
 	}
 }
