@@ -36,11 +36,14 @@ public class HashSet<E> implements Set<E> {
 	
 	public String toString() {
 		Iterator<E> itty = iterator();
-		String str = "";
+		String str = "[";
 		while(itty.hasNext()) {
-			str += itty.next() + " ";
+			str += itty.next();
+			if(itty.hasNext()) {
+				str += ", ";
+			}
 		}
-		return str;
+		return str += "]";
 	}
 	
 	/** @return true if obj is a Set and all the values in this Set are in the other Set, 
@@ -80,6 +83,7 @@ public class HashSet<E> implements Set<E> {
 		return intersect;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Set<E> difference(Set<E> other) {
 		Set<E> difference = new HashSet<E>();
 		if(other instanceof HashSet<?>) {

@@ -15,7 +15,7 @@ public class FinalHashSetTest {
 		test.add("OK");
 		test2.add("OK");
 		
-		System.out.println("Test and Test2 are equal: " + test.equals(test2));
+		System.out.println("Test and Test2 are equal: " + test.equals(test2)); //Should be true
 		
 		test.add("TRUE");
 		test.add("GOLDEN");
@@ -25,16 +25,16 @@ public class FinalHashSetTest {
 		test2.add("You're Loyal");
 		test2.add("You're Perfect");
 		
-		System.out.println("Test and Test2 aren't equal anymore: " + !test.equals(test2));
+		System.out.println("Test and Test2 aren't equal anymore: " + !test.equals(test2)); //Should be true
 		
 		Set<String> test3 = test.difference(test2);
 		
 		System.out.println("Test : " + test);
 		System.out.println("Test2 : " + test2);
-		System.out.println("Difference of test and test2 : " + test3);
+		System.out.println("Difference of test and test2 : " + test3); //"TRUE" "GOLDEN" "IT WORKS"
 		
 		test3 = test2.difference(test);
 		
-		System.out.println("Difference of test2 and test : " + test3);
+		System.out.println("Difference of test2 and test : " + test3); //"You're Smart" "You're Loyal" "You're Perfect"
 	}
 }

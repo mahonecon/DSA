@@ -1,4 +1,6 @@
 package map;
+import list.ArrayList;
+import list.Iterator;
 import tree.*;
 
 public class TreeMap<K extends Comparable, V> implements Map<K,V>{
@@ -53,9 +55,17 @@ public class TreeMap<K extends Comparable, V> implements Map<K,V>{
 		return size()==0;
 	}
 
-	@Override
 	public boolean hasDuplicateValues() {
-		// TODO Auto-generated method stub
+		Iterator<Entry<K,V>> itty = tree.iterator();
+		ArrayList<V> values = new ArrayList<V>();
+		Entry<K,V> e;
+		while(itty.hasNext()) {
+			e = itty.next();
+			if(values.contains(e.value)) {
+				return true;
+			}
+			values.add(e.value);
+		}
 		return false;
 	}
 }

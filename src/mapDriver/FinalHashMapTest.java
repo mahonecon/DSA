@@ -15,7 +15,11 @@ public class FinalHashMapTest {
 		test.put("Seventh", "Jon");
 		test.put("Eighth", "No");
 		
-		System.out.println(test.hasDuplicateValues()); //Toggle the addition of the "Sixth" value, "Larry" in order to change from true to false and vice versa;
+		System.out.println("Should be true : " + test.hasDuplicateValues());
+		
+		test.remove("Sixth");
+		
+		System.out.println("Should be false : " + test.hasDuplicateValues());
+		
 	}
-
 }

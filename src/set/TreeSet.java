@@ -1,25 +1,27 @@
 package set;
-import tree.*;
 
+import tree.*;
 import list.Iterator;
 
+@SuppressWarnings("rawtypes")
 public class TreeSet<E extends Comparable> implements Set<E> {
 	
-	BinaryTree<E> tree = new EmptyBinarySearchTree();
+	BinaryTree<E> tree = new EmptyBinarySearchTree<E>();
 	int size = 0;
 
 	public boolean add(E value) {
 		if(tree.containsKey(value))
 			return false;
-		tree=tree.add(value);
+		tree = tree.add(value);
 		size++;
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean contains(Object obj) {
 		E value;
 		try{
-			value=(E) obj;
+			value = (E)obj;
 			return tree.containsKey(value);
 		}
 		catch(ClassCastException cce){
@@ -30,15 +32,16 @@ public class TreeSet<E extends Comparable> implements Set<E> {
 	public boolean remove(Object obj) {
 		if(!contains(obj))
 			return false;
-		tree=tree.remove(obj);
+		tree = tree.remove(obj);
 		size--;
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	public Iterator<E> iterator() {
-		if(size==0)
-			return new EmptyIterator();
-		return new TreeSetIterator(this);
+		if(size == 0)
+			return new EmptyIterator<E>();
+		return new TreeSetIterator<E>(this);
 	}
 	
 	public int size() {
@@ -73,27 +76,37 @@ public class TreeSet<E extends Comparable> implements Set<E> {
 		return false;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Set<E> intersection(Set<E> other) {
 		Set<E> intersect = new TreeSet<E>();
 		if(other instanceof TreeSet<?>) {
-			Iterator itt = other.iterator();
+			Iterator<E> itt = other.iterator();
 			while(itt.hasNext()) {
 				if(itt != null) {
-					Object obj = itt;
+					Object obj = itt.next();
 					if(obj != null && this.contains(obj)) {
 						intersect.add((E)obj);
 					}
 				}
-				itt.next();
 			}
 		}
 		return intersect;
 	}
 
-	@Override
+	@SuppressWarnings("unchecked")
 	public Set<E> difference(Set<E> other) {
-		// TODO Auto-generated method stub
-		return null;
+		Set<E> difference = new TreeSet<E>();
+		if(other instanceof TreeSet<?>) {
+			Iterator<E> it = iterator();
+			while(it.hasNext()) {
+				if(it != null) {
+					Object obj = it.next();
+					if(obj != null && !other.contains(obj)) {
+						difference.add((E)obj);
+					}
+				}
+			}
+		}
+		return difference;
 	}
-
 }

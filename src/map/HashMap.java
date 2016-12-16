@@ -62,7 +62,7 @@ public class HashMap<K, V> implements Map<K,V> {
 		String str = "[";
 		Iterator<Entry<K,V>> itty = table.iterator();
 		while(itty.hasNext()) {
-			Entry e = (Entry)itty.next();
+			Entry<K,V> e = (Entry<K,V>)itty.next();
 			str += e.toString();
 			if(itty.hasNext()) {
 				str += ", ";
